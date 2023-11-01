@@ -5,7 +5,6 @@ local overrides = require "custom.configs.overrides"
 -- set event to determine when to load plugins
 -- For exp: event = 'InsertEnter', plugin will load when start insert mode
 
-
 -- LAZYVIM EVENTS: https://github.com/folke/lazy.nvim#-user-events
 -- VeryLazy: triggered after LazyDone and processing VimEnter auto commands
 -- you can use the VeryLazy event for things that can
@@ -16,9 +15,7 @@ local overrides = require "custom.configs.overrides"
 -- { '<PLUGIN_NAME>', lazy = false } : make sure we load this during startup
 -- { ..., priority = 1000 }: make sure to load this before all the other start plugins
 
-
 -- INFOTMATION (END) --
-
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -104,6 +101,9 @@ local plugins = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
+      highlight = {
+        pattern = [[.*<(KEYWORDS)\s*:?]], -- pattern or table of patterns, used for highlighting (vim regex)
+      },
     },
   },
 
